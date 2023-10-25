@@ -12,7 +12,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
+        $this->call(master_barangTableSeeder::class);
+        $this->call(stok_barangTableSeeder::class);
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
