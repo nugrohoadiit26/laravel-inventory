@@ -26,7 +26,8 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4 pt-3">
-                            @yield('konten')
+                        @include('template.pesan-kilat')
+                        @yield('konten')
                     </div>
                 </main>
                 @include('template/footer')

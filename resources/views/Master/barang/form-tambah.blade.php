@@ -5,7 +5,7 @@
     @csrf
 <div class="mb-3">
     <label for="html_kode" class="form-label">Kode</label>
-    <input type="text" class="form-control" id="html_kode" name="html_kode" placeholder="kode barang">
+    <input type="text" class="form-control" id="html_kode" name="html_kode" placeholder="kode barang" autofocus >
   </div>
   <div class="mb-3">
     <label for="html_nama" class="form-label">Nama Barang</label>
