@@ -16,8 +16,6 @@ Halaman Master Barang
             <th>Kode</th>
             <th>Nama</th>
             <th>Deskripsi</th>
-            <th>id_kategori</th>
-            <th>id_gudang</th>
             <th>Aksi</th>
 
         </tr>
@@ -33,8 +31,6 @@ Halaman Master Barang
                 <td>{{ $b->kode }}</td>
                 <td>{{ $b->nama }}</td>
                 <td>{{ $b->deskripsi }}</td>
-                <td>{{ $b->id_kategori }}</td>
-                <td>{{ $b->id_gudang }}</td>
                 <td><a class='btn btn-secondary btn-sm' href=''>Detail</a>
                     <a class='btn btn-warning btn-sm' href=''>Edit</a>
                 </td>
