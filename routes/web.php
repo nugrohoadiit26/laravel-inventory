@@ -52,13 +52,23 @@ Route::post('/master/barang/simpan', [MasterBarangController::class, 'store'])
     ->name('master-barang-simpan')
     ->middleware('auth');
 
-Route::get('/master/barang/barang{id}', [MasterBarangController::class, 'show'])
+Route::get('/master/barang/detail/{id}', [MasterBarangController::class, 'show'])
     ->name('master-barang-detail')
     ->where('id', '[0-9]+')
     ->middleware('auth');
 
+Route::get('/master/barang/edit/{id}', [MasterBarangController::class, 'edit'])
+    ->name('master-barang-edit')
+    ->where('id', '[0-9]+')
+    ->middleware('auth');
 
-Route::get('/master/barang/hapus{id}', [MasterBarangController::class, 'destroy'])
+Route::post('/master/barang/update/{id}', [MasterBarangController::class, 'update'])
+    ->name('master-barang-update')
+    ->where('id', '[0-9]+')
+    ->middleware('auth');
+
+
+Route::get('/master/barang/hapus/{id}', [MasterBarangController::class, 'destroy'])
     ->name('master-barang-hapus')
     ->where('id', '[0-9]+')
     ->middleware('auth');

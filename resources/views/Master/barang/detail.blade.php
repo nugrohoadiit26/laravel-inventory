@@ -1,7 +1,8 @@
 @extends('master/all')
 @section('master-konten')
 
-<h1>Detail Barang</h1>
+<h5>Detail Barang</h5>
+@if (@isset($barang[0]))
 
 @php
     //konversi tanggal format sql menjadi gampang dibaca
@@ -26,5 +27,9 @@
 
     </div>
   </div>
+
+  @else
+        <h2>Barang Tidak Ada</h2>
+  @endif
 
   @endsection
