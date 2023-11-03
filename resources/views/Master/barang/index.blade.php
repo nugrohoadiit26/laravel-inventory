@@ -10,35 +10,37 @@ Halaman Master Barang
 </div>
 <table class="table table-hover">
     <thead>
-        <tr>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Kode</th>
+        <th scope="col">Nama</th>
+        <th scope="col">Deskripsi</th>
+        <th scope="col">Pilihan</th>
 
-            <th>No</th>
-            <th>Kode</th>
-            <th>Nama</th>
-            <th>Deskripsi</th>
-            <th>Aksi</th>
-
-        </tr>
+      </tr>
     </thead>
     <tbody>
-        @php
-            $i=1;
-        @endphp
-        @foreach ($barang as $b )
-            <tr>
+      @php
+          $i = 1;
+      @endphp
+        @foreach($barang as $b)
+          <tr>
+            <th scope='row'>{{ $i++}}</th>
+            <td>{{ $b->kode }}</td>
+            <td>{{ $b->nama }}</td>
+            <td>{{ $b->deskripsi }}</td>
+            <td>
+                <a href="{{ route('master-barang-detail', ['id' => $b->id]) }}"
+                  class="btn btn-sm btn-success rounded-circle">
+                  <i class="fa fa-solid fa-eye"></i>
+                </a>
+                <a href="{{ route('master-barang-hapus',['id'=>$b->id]) }}"
+                    class="btn btn-sm btn-danger rounded-circle"
+                  onclick="return confirm('Apakah anda yakin ingin hapus {{ $b->kode }} ?')">
+                  <i class="fa fa-solid fa-trash"></i> </a></td>
+          </tr>
+      @endforeach
 
-                <th scope="row">{{ $i++ }}</th>
-                <td>{{ $b->kode }}</td>
-                <td>{{ $b->nama }}</td>
-                <td>{{ $b->deskripsi }}</td>
-                <td><a class='btn btn-secondary btn-sm' href=''>Detail</a>
-                    <a class='btn btn-warning btn-sm' href=''>Edit</a>
-                </td>
-            </tr>
-        @endforeach
     </tbody>
-</table>
-
-
+  </table>
 @endsection
-

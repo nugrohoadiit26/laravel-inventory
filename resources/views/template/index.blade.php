@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="{{ asset('bootstrap-5.3.2/css/bootstrap.min.css') }}" >
         <link rel="stylesheet" href="{{asset('styles.css')}}">
         <link rel="icon" href="{{ asset('image/bootstrap-logo.svg') }}" alt="" width="72" height="57">
-        <link rel="stylesheet" href="{{'fontawesome-6.4.2/css/all.min.css'}}">
+        <link rel="stylesheet" href="{{asset('fontawesome-6.4.2/css/all.min.css')}}">
         <script src="{{ asset('bootstrap-5.3.2/js/bootstrap.bundle.min.js')}}"></script>
         <script src="{{ asset('fontawesome-6.4.2/js/all.min.css')}}"></script>
         <script src="{{ asset('scripts.js')}}"></script>
