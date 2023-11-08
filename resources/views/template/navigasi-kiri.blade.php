@@ -8,9 +8,19 @@
                 Dashboard
             </a>
             <a class="nav-link {{ (Request::segment(1) == 'master' ? 'active':'') }}"
-            href="{{ url('/master') }}">
+            href="{{ route('master') }}">
                 <div class="sb-nav-link-icon"><i class="fa-solid fa-database"></i></div>
                 Master Data
+            </a>
+            <a class="nav-link {{ (Request::segment(1) == 'stok-masuk' ? 'active':'') }}"
+            href="{{ route('stok-masuk') }}">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-box"></i></div>
+                Stok Masuk
+            </a>
+            <a class="nav-link {{ (Request::segment(1) == 'stok-keluar' ? 'active':'') }}"
+            href="{{ route('stok-keluar') }}">
+                <div class="sb-nav-link-icon"><i class="fa-solid fa-box-open"></i></div>
+                Stok Keluar
             </a>
        </div>
     </div>

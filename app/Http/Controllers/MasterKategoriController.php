@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\MasterKategoriModel;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class MasterKategoriController extends Controller
 {
@@ -11,7 +15,8 @@ class MasterKategoriController extends Controller
      */
     public function index()
     {
-        return view('master/kategori/index');
+        $kategori = MasterKategoriModel::get();
+        return view('master/kategori/index', compact('kategori'));
     }
 
     /**
@@ -19,7 +24,7 @@ class MasterKategoriController extends Controller
      */
     public function create()
     {
-        //
+        return view('master/kategori/form-tambah');
     }
 
     /**

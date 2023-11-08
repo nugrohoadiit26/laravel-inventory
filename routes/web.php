@@ -6,6 +6,7 @@ use App\Http\Controllers\MasterBarangController;
 use App\Http\Controllers\MasterController;
 use App\Http\Controllers\MasterGudangController;
 use App\Http\Controllers\MasterKategoriController;
+use App\Http\Controllers\StokController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -80,4 +81,12 @@ Route::get('/master/kategori', [MasterKategoriController::class, 'index'])
 
 Route::get('/master/gudang', [MasterGudangController::class, 'index'])
     ->name('master-gudang')
+    ->middleware('auth');
+
+Route::get('/stok-masuk', [StokController::class, 'form_stok_masuk'])
+    ->name('stok-masuk')
+    ->middleware('auth');
+
+Route::get('/stok-keluar', [StokController::class, 'form_stok_keluar'])
+    ->name('stok-keluar')
     ->middleware('auth');
