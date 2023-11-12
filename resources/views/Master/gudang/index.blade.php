@@ -1,6 +1,52 @@
 @extends('master/all')
 @section('master-konten')
 
-Halaman Master Gudang
+<h5>Halaman Master Kategori</h5>
+
+<div class="row">
+    <div class="col-12 text-end">
+        <a href="{{ route('master-gudang-tambah') }}" class="btn btn-primary">+Tambah Kategori</a>
+    </div>
+</div>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Kode</th>
+        <th scope="col">Nama Gudang</th>
+         <th scope="col">Aksi</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      @php
+          $i = 1;
+      @endphp
+        @foreach ($gudang as $k )
+
+
+        <tr>
+            <th scope='row'>{{ $i++}}</th>
+            <td>{{ $k->kode }}</td>
+            <td>{{ $k->nama_gudang }}</td>
+
+            <td>
+            <a href="{{ route('master-gudang-detail', ['id' => $k->id]) }}"
+                  class="btn btn-sm btn-success rounded-circle">
+                  <i class="fa fa-solid fa-eye"></i>
+                </a>
+                <a href="{{ route('master-gudang-edit', ['id' => $k->id]) }}"
+                    class="btn btn-sm btn-warning rounded-circle">
+                    <i class="fa fa-solid fa-pencil"></i>
+                  </a>
+                <a href="{{ route('master-gudang-hapus',['id'=>$k->id]) }}"
+                    class="btn btn-sm btn-danger rounded-circle"
+                  onclick="return confirm('Apakah anda yakin ingin hapus {{ $k->kode }} ?')">
+                  <i class="fa fa-solid fa-trash"></i> </a></td>
+          </tr>
+      @endforeach
+
+    </tbody>
+  </table>
 
 @endsection
